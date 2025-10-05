@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+8-bit counter increments at rising edge.
 
 ## How to test
 
-Explain how to use your project
+Observe waveforms of "count" as clock pulses. Count should increment up to 8 and reset if rst_n goes low.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Seven-segment display potentially to show incrementing.

@@ -46,4 +46,23 @@ module tb ();
       .rst_n  (rst_n)     // not reset
   );
 
+  // Clock generator: 10ns period → 100 MHz
+  initial clk = 0;
+  always #5 clk = ~clk;
+
+  // Stimulus
+  initial begin
+    ena    = 1'b1;
+    ui_in  = 8'd0;
+    uio_in = 8'd0;
+
+    rst_n  = 1'b0;   // hold reset low
+    #20;             // wait 20 ns
+    rst_n  = 1'b1;   // release reset
+
+    // Run for some cycles
+    #200;
+    $finish;
+  end
+
 endmodule
